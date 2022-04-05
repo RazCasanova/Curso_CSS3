@@ -1,0 +1,17 @@
+.table{
+    font-size: 3rem;
+    border: medium solid black;
+    border-collapse: collapse;
+    border-collapse: separate; /*default*/
+    /*Elimina la celda vacia, funciona cuando el border-collapse se mantenga en su propiedad por defecto*/
+    empty-cells: show; /*default*/
+    empty-cells: hide;
+}
+
+.table, 
+th, 
+td{
+    border: medium solid black;
+    /*Espacio entre las celdas. Para que se cumpla la propiedad border-collapse debe mantenerse por defecto*/
+    border-spacing: 10px;
+}

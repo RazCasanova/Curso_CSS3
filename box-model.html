@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/box-model.css">
+    <title>Modelo de caja en CSS</title>
+</head>
+<body>
+    <h1>Modelo de caja en CSS</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, rem placeat dolor doloremque illum corporis consequuntur dolorum similique vitae repellendus. Natus molestiae vitae ratione accusantium consequatur dolor reprehenderit sequi! Adipisci!</p>
+    <hr>
+    <div class="caja-uno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptatum rerum laudantium omnis inventore neque provident fugiat beatae rem? Repellat eaque cum fugit sed tempore dolor adipisci, perspiciatis vitae est.</div>
+    <div class="caja-dos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptatum rerum laudantium omnis inventore neque provident fugiat beatae rem? Repellat eaque cum fugit sed tempore dolor adipisci, perspiciatis vitae est.</div>
+    <hr>
+    <h2>Cajas de linea vs Cajas de bloque</h2>
+    <span class="caja-linea">Esto es una caja de linea</span>
+    <span>Esto es una espan</span>
+    <div class="caja-bloque">Esto es una caja de bloque</div>
+    <hr>
+    <h2>Display</h2>
+    <div class="caja-none">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eligendi ipsa reiciendis sunt eaque praesentium, nisi inventore, dolorum deserunt obcaecati, harum natus magni beatae vitae veniam? Voluptates sequi earum odio?</div>
+    <span class="caja-linea-bloque">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod tempore, animi pariatur saepe dignissimos quos reiciendis vel, enim, aspernatur autem id similique quam quaerat consequuntur officia voluptatum asperiores itaque. Labore.</span>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, porro nesciunt fugit exercitationem modi, non laudantium dolores tempora deserunt accusantium eligendi? Maiores excepturi numquam molestias recusandae voluptate, fugit quasi odio.</p>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ul>
+    <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ol>
+    <table>
+        <tr>
+            <td>celda 1</td>
+            <td>celda 2</td>
+            <td>celda 3</td>
+        </tr>
+        <tr>
+            <td>celda 4</td>
+            <td>celda 5</td>
+            <td>celda 6</td>
+        </tr>
+        <tr>
+            <td>celda 7</td>
+            <td>celda 8</td>
+            <td>celda 9</td>
+        </tr>
+    </table>
+    <hr>
+    <h2>Propiedad Visibility</h2>
+    <div class="caja-none">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eligendi ipsa reiciendis sunt eaque praesentium, nisi inventore, dolorum deserunt obcaecati, harum natus magni beatae vitae veniam? Voluptates sequi earum odio?</div>
+    <div class="caja-hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eligendi ipsa reiciendis sunt eaque praesentium, nisi inventore, dolorum deserunt obcaecati, harum natus magni beatae vitae veniam? Voluptates sequi earum odio?</div>
+    <hr>
+    <h2>Propiedad overflow</h2>
+    <p class="overflow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem explicabo laborum modi, ullam quia quidem dicta, in perspiciatis aliquid quas, harum iusto dolorum. Facilis deleniti autem officiis amet tenetur iure?</p>
+
+    <hr>
+    <h2>Tamaño de caja</h2>
+    <div class="box-sizing-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iste dolores temporibus aspernatur animi debitis dicta excepturi non necessitatibus, nobis commodi! Aliquam odit reprehenderit voluptatem nostrum quaerat facere culpa pariatur.
+    </div>
+    <div class="box-sizing-border">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iste dolores temporibus aspernatur animi debitis dicta excepturi non necessitatibus, nobis commodi! Aliquam odit reprehenderit voluptatem nostrum quaerat facere culpa pariatur.
+    </div>
+    <article class="container-col-3">
+        <section class="items">Seccion 1</section>
+        <section class="items">Seccion 2</section>
+        <section class="items">Seccion 3</section>
+    </article>
+    <hr>
+    <h2>Propiedad Float y Clear</h2>
+    <article class="container-floats">
+        <section class="float-right">Este elemento flota a la derecha</section>
+        <!-- <section class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ipsa doloribus suscipit eaque, rem, temporibus consequuntur sint, aliquam illo sunt magnam saepe optio est voluptate molestias eveniet quaerat a reiciendis.</section> -->
+        <section class="float-left">Este elemento flota a la izquierda</section>
+    </article>
+    <div class="clearfix"></div>
+    <article>
+        <section class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ipsa doloribus suscipit eaque, rem, temporibus consequuntur sint, aliquam illo sunt magnam saepe optio est voluptate molestias eveniet quaerat a reiciendis.</section>
+    </article>
+    <hr>
+    <h2>Colapso de margenes verticales</h2>
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, velit enim sed dicta nam beatae eveniet maiores nisi corrupti minus ratione, quia reiciendis nesciunt? Perspiciatis voluptate necessitatibus magni doloremque repudiandae!</div>
+    <article class="margin-collapse">
+        <section>Sección 1</section>
+        <section>Sección 2</section>
+        <section>
+            <span>Span 1</span>
+            <span>Span 2</span>
+            <span>Span 3</span>
+        </section>
+    </article>
+    <hr>
+    <h2>Centrado de cajas</h2>
+    <article class="sitio-web">
+        <header>Cabecera</header>
+        <main>Contenido principal</main>
+        <footer>Pie de página</footer>
+    </article>
+    <a href="index.html">👆</a>
+</body>
+</html>
