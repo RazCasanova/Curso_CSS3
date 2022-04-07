@@ -53,3 +53,45 @@ body{
     font-size: 3vw;
     color: #d9e8f0;
 }
+
+.carousel{
+    border: thick solid #d9e8f0;
+    width: 50%;
+    height: 50vh;
+    overflow-x: hidden;
+    display: flex;
+}
+
+.carousel-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 100%);
+    /* overflow-x:scroll; */
+    overflow: scroll hidden;
+    scroll-snap-type: x mandatory;
+    scroll-snap-type: inline mandatory;
+    scroll-snap-type: x proximity;
+}
+
+.carousel-slide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e2345;
+    scroll-snap-align: center;
+}
+
+.carousel-slide:nth-child(even){
+    background-color: #5b3372;
+}
+
+.gradient-text{
+    background-image: linear-gradient(45deg, magenta, yellow);
+    -ms-background-clip: text;      
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    -ms-text-fill-color:transparent;
+    -moz-text-fill-color:transparent;
+    -webkit-text-fill-color:transparent;
+}
