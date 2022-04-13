@@ -1,0 +1,464 @@
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    border: thick solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+}
+
+.card{
+    width: 600px;
+    height: 400px;
+    border: thick solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+/*
+Transiciones
+transition-property:
+transition-duration:
+transition-timing-function: linear ease ease-in ease-out    ease-in-out step
+transition-delay:
+transition: property duration timing-function delay
+*/
+
+/* 
+    No todas las propiedades son animables 
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+*/
+
+
+.transitions .box{
+    background-color: magenta;
+    transition-property: background-color;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+    transition-delay: 0.5s;
+    transition: border-color 2s linear 1s;
+    /* No usar la palabra reservada all ya que aplica a todas las propiedades*/
+    /* transition: all 2s ease-in-out 250ms; */
+    transition: background-color 2s ease-in-out 250ms,border-radius 2s ease-in-out 250ms, border-color 2s ease-in-out 250ms ;
+}
+.transitions .box:hover{
+    background-color: cyan;
+    border-color: red;
+    border-radius: 2rem;
+}
+
+.transitions .card{
+    transition: opacity 1s ease-out,
+                border-color 3s steps(5),
+                filter 2s ease-in 1s,
+                box-shadow 1.5s linear 2s;
+}
+
+.transitions .card:hover{
+    opacity: .75;
+    border-color: orchid;
+    filter: blur(.15rem);
+    box-shadow: 1rem 1rem 2rem .5rem #000;
+}
+
+.transitions .card img{
+    transition: object-position 2s ease-in-out 3s;
+}
+
+.transitions .card img:hover{
+    object-position: 100% 50%;
+}
+
+.transform-2d img{
+    transition: transform 2s ease-in-out;
+}
+
+.transform-2d img:hover{
+    transform: none;
+    transform: translateX(4rem);
+    transform: translateY(4rem);
+    transform: translateY(-4rem);
+    transform: translate(-4rem, 4rem);
+    transform: translate(50% , 50%);
+    transform: translate(-50% , -50%);
+    transform: translate(-50% , 100px);
+    /* scale (valor en x, valor en y) */
+    transform: scaleX(2);
+    transform: scaleY(.5);
+    transform: scale(1.5, 1.5);
+    transform: scale(-1, -1);
+    transform: scale(-.5, -.5);
+
+    transform: rotateX(60deg);
+    transform: rotateX(90deg);
+    transform: rotateY(60deg);
+    transform: rotateY(90deg);
+    transform: rotateZ(60deg);
+    transform: rotateZ(-60deg);
+    /* La propiedad rotateZ y rotate en 2d aplica lo mismo */
+    transform: rotate(360deg);
+    transform: rotate(-360deg);
+
+    transform: skewX(20deg);
+    transform: skewX(-20deg);
+    transform: skewY(20deg);
+    transform: skewY(-20deg);
+    /*skew(valor en X, valor en Y)*/
+    transform: skew(20deg, 20deg);
+
+    /*
+    matrix (scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) 
+    se aplican valores numericos enteros
+    */
+    transform: matrix(1,2,2,1,20,10);
+
+    /* Las transformaciones son separadas con un espacio en blanco */
+    transform: translate(25%, -50%)  rotate(240deg) skew(10deg, 20deg) scale(-.5, -.5);
+}
+
+/*
+Para hacer uso de las tranformaciones en 3d es necesario invocar la propiedad perspective(), ya sea al elemento padre o al elemento que se el este aplicando la transformación en 3d
+*/
+
+.transform-3d{
+    perspective: 10rem;
+}
+
+.transform-3d img{
+    transition: transform 2s ease-in-out;
+}
+
+.transform-3d img:hover{
+    transform: translateZ(4rem);
+    transform: perspective(1000px) translateZ(4rem);
+    transform: perspective(10rem) translateZ(4rem);
+    transform: perspective(1rem) translateZ(4rem);
+    transform: translateZ(-4rem);
+    /*translate3d (valor en x, valor en y, valor en z)*/
+    transform: translate3d(2rem, 50%, -3rem);
+    
+    transform: scaleZ(1.5);
+    /*scale3d (valor en x, valor en y, valor en z)*/
+    transform: scale3d(2, 0.5, 3);
+
+    transform: rotateX(60deg);
+    transform: rotateX(90deg);
+    transform: rotateY(60deg);
+    transform: rotateY(90deg);
+    /* rotate3d(valor en x, valor en y, valor en z, angulo de inclinación) */
+    transform: rotate3d(1,1,1,45deg);
+    transform: rotate3d(1,.5,0,-45deg);
+    transform: rotate3d(-1,2.5,-2,-60deg);
+
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 6, 0, 0, 0, 1, 0, 50, 100, 0, 1.1);
+
+    transform: rotate3d(-1,2.5,-2,60deg) translate3d(2rem, 50%, -3rem) scale3d(2,.5,3);
+}
+
+.transform-origin img{
+    transition: transform 2s ease-in-out;
+    /* transform-origin: x y z; */
+    transform-origin: 50% 50% 0;
+    /* transform-origin: x y; */
+    transform-origin: 0 0;
+    /* transform-origin: x; */
+    transform-origin: 0;
+    transform-origin: top left;
+    transform-origin: top right;
+    transform-origin: top center;
+    transform-origin: bottom center;
+    transform-origin: bottom left;
+    transform-origin: bottom right;
+    transform-origin: -2rem;
+    transform-origin: -2rem -3rem;
+}
+
+.transform-origin img:hover{
+    transform: rotate(360deg);
+}
+
+.flip-card-1,
+.flip-card-2{
+    width: 600px;
+    height: 400px;
+    border: thick solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+
+    position: relative;
+    cursor: pointer;
+    transition: transform 1s ease-in-out;
+    perspective: 10rem;
+
+    transform-style: flat;
+    transform-style: preserve-3d;
+}
+
+.flip-card-2{
+    transform-origin: center right;
+}
+
+.flip-card-1:hover{
+    transform: rotateY(180deg);
+}
+.flip-card-2:hover{
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flip-card-1 img,
+.flip-card-2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+.flip-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /*para aplicar la propiedad backface es necesario colocar la perspectiva al elemento en cuestion o al padre que la contiene*/
+    backface-visibility: visible;
+    backface-visibility: hidden;
+}
+
+.flip-front{
+    transform: rotateY(0deg);
+}
+
+.flip-back{
+    transform: rotateY(180deg);
+}
+
+@keyframes myAwesomeAnimation {
+    from{
+        opacity: 0;
+        transform: translateX(0);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(100%);
+    }
+}
+
+.my-animation{
+    /* 
+    animation: 
+        name (obligatoria)
+        duration (obligatoria)
+        timing-function 
+        delay 
+        iteration-count 
+        direction 
+        fill-mode 
+        play-state; 
+    */
+    animation-name: myAwesomeAnimation;
+    animation-duration: 2s;
+
+    animation-timing-function: cubic-bezier(1,0,0,1);
+    animation-timing-function: ease-in-out;
+    /* animation-delay: 1500ms; */
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-direction: reverse;
+    animation-direction: alternate;
+    animation-fill-mode: none;
+    /*  forwards: al final de la animación se queda con los estilos finales de la animación*/
+    animation-fill-mode: forwards;
+    /*  backwards: al inicio de la animación se queda con los estilos iniciales de la animación*/
+    animation-fill-mode: backwards;
+    /*aplica al mismo tiempo el valor de forwards y
+backwards*/
+    animation-fill-mode: both;
+
+    animation-play-state: running;
+    animation-play-state: paused;
+
+    animation: myAwesomeAnimation 1.5s ease 250ms 7 alternate both running;
+}
+
+@keyframes myAwesomeAnimation2 {
+    0%{
+        opacity: 0;
+        transform: translateX(0);
+    }
+    50%{
+        opacity: .5;
+        transform: translateX(-50%);
+    }
+    75%{
+        transform: translateX(-75%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(100%);
+    }
+}
+
+.my-animation-2{
+    animation: myAwesomeAnimation2 4s;
+}
+
+@keyframes multipleAnimation1 {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes multipleAnimation2 {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.animation-multiple{
+    animation: multipleAnimation1 2s infinite, 
+                multipleAnimation2 1s 3 ease-in-out;
+}
+
+.motion-examples{
+    text-align: center;
+}
+
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.fade-in{
+    font-size: 5vw;
+    animation: fadein 2s linear 2s infinite alternate both;
+}
+@keyframes fadeout {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.fade-out{
+    font-size: 5vw;
+    animation: fadeout 2s linear 2s infinite alternate both;
+}
+
+@keyframes shake {
+    10%, 
+    90%{
+        transform: translate(-1px, 0);
+    }
+    20%, 
+    80%{
+        transform: translate(2px, 0);
+    }
+    50%, 
+    70%{
+        transform: translate(-4px, 0);
+    }
+    40%, 
+    60%{
+        transform: translate(4px, 0);
+    }
+}
+
+.shake{
+    font-size: 5vw;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.shake:hover{
+    animation: shake 1s cubic-bezier(.36,0.07,0.19,0.97) both;
+    transform: translate(0,0);
+}
+
+@keyframes pulse {
+    0%{
+        transform: scale(1.1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes heartColor {
+    10%{
+        background-color: #d00;
+    }
+}
+
+.pulse{
+    font-size: 5vw;
+    animation: pulse 1s linear infinite;
+}
+
+.heart{
+    position: relative;
+    width: 10vw;
+    height: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+    animation: pulse 1s infinite;
+}
+
+.heart::after,
+.heart::before{
+    content: "";
+    position: absolute;
+    left: 5vw;
+    top: 0;
+    width: 5vw;
+    height: 8vw;
+    background-color: #a00;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    border-radius: 5vw 5vw 0 0 ;
+    animation: heartColor 1s infinite;
+}
+
+.heart::after{
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
